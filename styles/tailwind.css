@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+@layer components {
+  .section-divider {
+    @apply w-24 h-px bg-wedding-brown-light mx-auto my-8 opacity-50;
+  }
+
+  .btn-wedding {
+    @apply inline-block px-8 py-3 bg-wedding-brown text-wedding-creme font-display
+           tracking-wider uppercase text-sm rounded-sm
+           hover:bg-wedding-brown-dark transition-colors duration-300;
+  }
+
+  .countdown-box {
+    @apply flex flex-col items-center justify-center w-20 h-20
+           bg-white bg-opacity-60 rounded-lg shadow-sm;
+  }
+}

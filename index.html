@@ -1,30 +1,319 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Wedding Website</title>
+    <title>Wedding Invitation</title>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="dist/tailwind.css" />
 
-    <!-- AOS -->
+    <!-- AOS Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
 </head>
-<body class="bg-white text-gray-900">
 
-<header class="p-6 text-center bg-pink-100 shadow">
-    <h1 class="text-3xl font-bold text-pink-700">Михайло & [Имя]</h1>
-</header>
+<body class="bg-wedding-creme text-wedding-brown">
 
-<section class="min-h-screen flex flex-col items-center justify-center" data-aos="fade-up">
-    <h2 class="text-5xl font-bold text-pink-600">Мы обручены 💍</h2>
-    <p class="mt-4 text-xl text-gray-700">И скоро свадьба…</p>
-</section>
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+            <span class="font-display italic text-2xl text-white drop-shadow-md nav-brand">M & D</span>
+            <div class="hidden md:flex gap-8 font-display text-sm tracking-wider uppercase">
+                <a href="#home" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Home</a>
+                <a href="#story" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Our Story</a>
+                <a href="#details" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Details</a>
+                <a href="#venue" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Venue</a>
+                <a href="#rsvp" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">RSVP</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white drop-shadow-md nav-brand" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <div class="flex flex-col gap-3 font-display text-sm tracking-wider uppercase pt-3">
+                <a href="#home" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Home</a>
+                <a href="#story" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Our Story</a>
+                <a href="#details" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Details</a>
+                <a href="#venue" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">Venue</a>
+                <a href="#rsvp" class="text-white drop-shadow-md hover:opacity-80 transition-opacity nav-link">RSVP</a>
+            </div>
+        </div>
+    </nav>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="js/aos-init.js"></script>
+    <!-- ============ HERO SECTION (full-screen background photo) ============ -->
+    <section id="home" class="relative min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <!-- Background photo — replace 'images/hero.jpg' with your photo -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('images/hero.jpg');"></div>
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+
+        <!-- Content on top of the photo -->
+        <div class="relative z-10">
+            <p class="font-display text-sm tracking-[0.3em] uppercase text-white text-opacity-90 animate-fade-in" data-aos="fade-down">
+                We are getting married
+            </p>
+
+            <h1 class="font-display italic text-6xl sm:text-7xl md:text-8xl text-white mt-6 drop-shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                Michael & Daria
+            </h1>
+
+            <div class="w-24 h-px bg-white mx-auto my-8 opacity-50" data-aos="fade-up" data-aos-delay="400"></div>
+
+            <p class="font-display text-xl sm:text-2xl text-white text-opacity-90 tracking-wide" data-aos="fade-up" data-aos-delay="500">
+                April 18, 2026
+            </p>
+
+            <!-- Countdown Timer -->
+            <div id="countdown" class="flex gap-4 sm:gap-6 mt-10 justify-center" data-aos="fade-up" data-aos-delay="600">
+                <div class="flex flex-col items-center justify-center w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg">
+                    <span id="days" class="font-display text-2xl font-semibold text-white">---</span>
+                    <span class="font-body text-xs uppercase tracking-wider text-white text-opacity-80">Days</span>
+                </div>
+                <div class="flex flex-col items-center justify-center w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg">
+                    <span id="hours" class="font-display text-2xl font-semibold text-white">--</span>
+                    <span class="font-body text-xs uppercase tracking-wider text-white text-opacity-80">Hours</span>
+                </div>
+                <div class="flex flex-col items-center justify-center w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg">
+                    <span id="minutes" class="font-display text-2xl font-semibold text-white">--</span>
+                    <span class="font-body text-xs uppercase tracking-wider text-white text-opacity-80">Min</span>
+                </div>
+                <div class="flex flex-col items-center justify-center w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg">
+                    <span id="seconds" class="font-display text-2xl font-semibold text-white">--</span>
+                    <span class="font-body text-xs uppercase tracking-wider text-white text-opacity-80">Sec</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="absolute bottom-8 z-10 animate-float">
+            <svg class="w-6 h-6 text-white opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============ OUR STORY ============ -->
+    <section id="story" class="py-24 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="font-display text-sm tracking-[0.3em] uppercase text-wedding-brown-light" data-aos="fade-up">
+                How it all began
+            </p>
+            <h2 class="font-display italic text-5xl sm:text-6xl text-wedding-brown mt-4" data-aos="fade-up" data-aos-delay="100">
+                Our Story
+            </h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="200"></div>
+
+            <div class="space-y-8 mt-8 font-body text-lg leading-relaxed text-wedding-brown-light">
+                <p data-aos="fade-up" data-aos-delay="300">
+                    Our paths crossed in a way that felt like destiny. From the very first
+                    conversation, we knew there was something special between us — a connection
+                    that words alone could never fully capture.
+                </p>
+                <p data-aos="fade-up" data-aos-delay="400">
+                    Through shared laughter, countless adventures, and quiet moments together,
+                    our love grew deeper with every passing day. What started as a spark has
+                    become a flame that will burn forever.
+                </p>
+                <p data-aos="fade-up" data-aos-delay="500">
+                    And now, surrounded by the people we love most, we are ready to begin
+                    the most beautiful chapter of our lives — together.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WEDDING DETAILS ============ -->
+    <section id="details" class="py-24 px-4 bg-wedding-creme-dark">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="font-display text-sm tracking-[0.3em] uppercase text-wedding-brown-light" data-aos="fade-up">
+                Join us on our special day
+            </p>
+            <h2 class="font-display italic text-5xl sm:text-6xl text-wedding-brown mt-4" data-aos="fade-up" data-aos-delay="100">
+                Wedding Details
+            </h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="200"></div>
+
+            <div class="grid md:grid-cols-2 gap-12 mt-12">
+                <!-- Ceremony -->
+                <div class="bg-white bg-opacity-60 rounded-lg p-8 shadow-sm" data-aos="fade-right" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-wedding-creme-dark">
+                        <svg class="w-8 h-8 text-wedding-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 110-18 9 9 0 010 18zm0-18v18m-9-9h18"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-wedding-brown">Ceremony</h3>
+                    <div class="section-divider"></div>
+                    <p class="font-body text-lg text-wedding-brown-light">Saturday, April 18, 2026</p>
+                    <p class="font-body text-lg text-wedding-brown-light mt-1">3:00 PM</p>
+                    <p class="font-body text-base text-wedding-brown-light mt-4">
+                        Church Name<br />
+                        123 Wedding Street<br />
+                        City, Country
+                    </p>
+                </div>
+
+                <!-- Reception -->
+                <div class="bg-white bg-opacity-60 rounded-lg p-8 shadow-sm" data-aos="fade-left" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-wedding-creme-dark">
+                        <svg class="w-8 h-8 text-wedding-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.999V5.507a2 2 0 00-1.172-1.819l-7-3.182a2 2 0 00-1.656 0l-7 3.182A2 2 0 003 5.507V16a2 2 0 001.172 1.819l7 3.182a2 2 0 001.656 0l7-3.182A2 2 0 0021 16z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-wedding-brown">Reception</h3>
+                    <div class="section-divider"></div>
+                    <p class="font-body text-lg text-wedding-brown-light">Saturday, April 18, 2026</p>
+                    <p class="font-body text-lg text-wedding-brown-light mt-1">5:00 PM</p>
+                    <p class="font-body text-base text-wedding-brown-light mt-4">
+                        Venue Name<br />
+                        456 Celebration Avenue<br />
+                        City, Country
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VENUE ============ -->
+    <section id="venue" class="py-24 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="font-display text-sm tracking-[0.3em] uppercase text-wedding-brown-light" data-aos="fade-up">
+                Where the magic happens
+            </p>
+            <h2 class="font-display italic text-5xl sm:text-6xl text-wedding-brown mt-4" data-aos="fade-up" data-aos-delay="100">
+                The Venue
+            </h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="200"></div>
+
+            <!-- Placeholder for venue image -->
+            <div class="mt-10 bg-wedding-creme-dark rounded-lg overflow-hidden shadow-sm" data-aos="zoom-in" data-aos-delay="300">
+                <div class="w-full h-64 sm:h-80 md:h-96 flex items-center justify-center">
+                    <p class="font-display text-wedding-brown-light text-lg tracking-wide">
+                        [ Venue Photo ]
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-10 font-body text-lg leading-relaxed text-wedding-brown-light max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                <p>
+                    A place where elegance meets warmth. We chose this venue because it
+                    reflects everything we love — natural beauty, intimate atmosphere, and
+                    timeless charm.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DRESS CODE ============ -->
+    <section class="py-24 px-4 bg-wedding-creme-dark">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-display italic text-5xl sm:text-6xl text-wedding-brown" data-aos="fade-up">
+                Dress Code
+            </h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+            <p class="font-body text-lg text-wedding-brown-light mt-4" data-aos="fade-up" data-aos-delay="200">
+                Semi-formal / Garden Elegant
+            </p>
+            <p class="font-body text-base text-wedding-brown-light mt-4 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                We kindly ask our guests to dress in warm, earthy tones — creams, beiges,
+                soft browns, and dusty rose. Please avoid black and white.
+            </p>
+
+            <!-- Color swatches -->
+            <div class="flex justify-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-12 h-12 rounded-full bg-[#FDF5E6] border border-wedding-brown-light border-opacity-30 shadow-sm" title="Creme"></div>
+                <div class="w-12 h-12 rounded-full bg-[#D2B48C] shadow-sm" title="Tan"></div>
+                <div class="w-12 h-12 rounded-full bg-[#A07855] shadow-sm" title="Light Brown"></div>
+                <div class="w-12 h-12 rounded-full bg-[#D4A0A0] shadow-sm" title="Dusty Rose"></div>
+                <div class="w-12 h-12 rounded-full bg-[#C4B39A] shadow-sm" title="Sand"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section id="rsvp" class="py-24 px-4">
+        <div class="max-w-xl mx-auto text-center">
+            <p class="font-display text-sm tracking-[0.3em] uppercase text-wedding-brown-light" data-aos="fade-up">
+                We hope you can make it
+            </p>
+            <h2 class="font-display italic text-5xl sm:text-6xl text-wedding-brown mt-4" data-aos="fade-up" data-aos-delay="100">
+                RSVP
+            </h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="200"></div>
+
+            <p class="font-body text-lg text-wedding-brown-light mt-4 mb-10" data-aos="fade-up" data-aos-delay="300">
+                Kindly respond by March 18, 2026
+            </p>
+
+            <form class="space-y-6 text-left" data-aos="fade-up" data-aos-delay="400">
+                <div>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Full Name</label>
+                    <input type="text" required
+                           class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
+                                  font-body text-wedding-brown placeholder-wedding-brown-light placeholder-opacity-50
+                                  focus:outline-none focus:border-wedding-brown transition-colors"
+                           placeholder="Your name" />
+                </div>
+
+                <div>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Email</label>
+                    <input type="email" required
+                           class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
+                                  font-body text-wedding-brown placeholder-wedding-brown-light placeholder-opacity-50
+                                  focus:outline-none focus:border-wedding-brown transition-colors"
+                           placeholder="your@email.com" />
+                </div>
+
+                <div>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Attendance</label>
+                    <select required
+                            class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
+                                   font-body text-wedding-brown
+                                   focus:outline-none focus:border-wedding-brown transition-colors">
+                        <option value="">Please select</option>
+                        <option value="accept">Joyfully Accept</option>
+                        <option value="decline">Respectfully Decline</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Number of Guests</label>
+                    <input type="number" min="1" max="5" value="1"
+                           class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
+                                  font-body text-wedding-brown
+                                  focus:outline-none focus:border-wedding-brown transition-colors" />
+                </div>
+
+                <div>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Message (optional)</label>
+                    <textarea rows="3"
+                              class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
+                                     font-body text-wedding-brown placeholder-wedding-brown-light placeholder-opacity-50
+                                     focus:outline-none focus:border-wedding-brown transition-colors resize-none"
+                              placeholder="Any dietary requirements or notes..."></textarea>
+                </div>
+
+                <div class="text-center pt-4">
+                    <button type="submit" class="btn-wedding">Send RSVP</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="py-12 px-4 bg-wedding-brown text-wedding-creme text-center">
+        <p class="font-display italic text-4xl">Michael & Daria</p>
+        <p class="font-display text-sm tracking-[0.2em] uppercase mt-4 opacity-70">April 18, 2026</p>
+        <div class="w-16 h-px bg-wedding-creme mx-auto my-6 opacity-30"></div>
+        <p class="font-body text-sm opacity-60">Made with love</p>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/aos-init.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/navbar-scroll.js"></script>
 </body>
 </html>
