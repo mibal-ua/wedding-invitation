@@ -266,8 +266,8 @@
             <!-- Color swatches -->
             <div class="flex flex-wrap justify-center gap-5 mt-10" data-aos="fade-up" data-aos-delay="400">
                 <div class="w-14 h-14 rounded-full bg-[#4A3728] shadow-sm"></div>
-                <div class="w-14 h-14 rounded-full bg-[#A3B18A] shadow-sm"></div>
                 <div class="w-14 h-14 rounded-full bg-[#A07855] shadow-sm"></div>
+                <div class="w-14 h-14 rounded-full bg-[#A3B18A] shadow-sm"></div>
                 <div class="w-14 h-14 rounded-full bg-[#D4A0A0] shadow-sm"></div>
                 <div class="w-14 h-14 rounded-full bg-[#F2D5D5] shadow-sm"></div>
             </div>
@@ -291,37 +291,37 @@
 
             <form id="rsvp-form" class="space-y-6 text-left" data-aos="fade-up" data-aos-delay="400">
                 <div>
-                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Full Name</label>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Повне ім'я</label>
                     <input type="text" name="name" required
                            class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
                                   font-body text-wedding-brown placeholder-wedding-brown-light placeholder-opacity-50
                                   focus:outline-none focus:border-wedding-brown transition-colors"
-                           placeholder="Your name" />
+                           placeholder="Ваше ім'я та прізвище" />
                 </div>
 
                 <div>
-                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Email</label>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Електронна пошта</label>
                     <input type="email" name="email" required
                            class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
                                   font-body text-wedding-brown placeholder-wedding-brown-light placeholder-opacity-50
                                   focus:outline-none focus:border-wedding-brown transition-colors"
-                           placeholder="your@email.com" />
+                           placeholder="ваша@пошта.com" />
                 </div>
 
                 <div>
-                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Attendance</label>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Присутність</label>
                     <select name="attendance" required
                             class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
                                    font-body text-wedding-brown
                                    focus:outline-none focus:border-wedding-brown transition-colors">
-                        <option value="">Please select</option>
-                        <option value="accept">Joyfully Accept</option>
-                        <option value="decline">Respectfully Decline</option>
+                        <option value="">Оберіть варіант</option>
+                        <option value="accept">З радістю буду</option>
+                        <option value="decline">На жаль, не зможу</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Number of Guests</label>
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Кількість гостей</label>
                     <input type="number" name="guests" min="1" max="5" value="1"
                            class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
                                   font-body text-wedding-brown
@@ -329,21 +329,76 @@
                 </div>
 
                 <div>
-                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Message (optional)</label>
-                    <textarea name="message" rows="3"
+                    <label class="block font-display text-sm uppercase tracking-wider text-wedding-brown mb-2">Задайте одне питання, на яке Ви б хотіли отримати відповідь від наречених на святі</label>
+                    <textarea name="message" rows="3" required
                               class="w-full px-4 py-3 bg-white bg-opacity-60 border border-wedding-creme-dark rounded-sm
                                      font-body text-wedding-brown placeholder-wedding-brown-light placeholder-opacity-50
                                      focus:outline-none focus:border-wedding-brown transition-colors resize-none"
-                              placeholder="Any dietary requirements or notes..."></textarea>
+                              placeholder="Яку традицію ви хочете створити у своїй сім’ї?..."></textarea>
                 </div>
 
-                <div class="text-center pt-4">
-                    <button id="rsvp-submit" type="submit" class="btn-wedding">Send RSVP</button>
+                <div class="text-center pt-4 relative">
+                    <button id="rsvp-submit" type="submit" class="btn-rsvp group">
+                        <span id="rsvp-btn-text">Надіслати відповідь</span>
+                        <svg id="rsvp-btn-icon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+                        </svg>
+                    </button>
+                    <!-- Flying plane that appears on submit -->
+                    <svg id="rsvp-flying-plane" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 absolute text-wedding-brown pointer-events-none opacity-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="left:50%;top:50%">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+                    </svg>
                 </div>
                 <p id="rsvp-status" class="text-center mt-4 font-body text-sm"></p>
             </form>
         </div>
     </section>
+
+    <!-- ============ RSVP MODAL ============ -->
+    <div id="rsvp-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <!-- Backdrop -->
+        <div id="rsvp-modal-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+
+        <!-- Modal content -->
+        <div id="rsvp-modal-content" class="relative bg-wedding-creme rounded-lg shadow-2xl max-w-md w-full p-10 text-center scale-90 opacity-0 transition-all duration-500">
+            <!-- Close button -->
+            <button id="rsvp-modal-close" class="absolute top-4 right-4 text-wedding-brown-light hover:text-wedding-brown transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Heart icon -->
+            <div id="rsvp-modal-icon" class="mx-auto mb-6 w-16 h-16 rounded-full bg-wedding-creme-dark flex items-center justify-center opacity-0 scale-50 transition-all duration-700 delay-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-wedding-brown" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 id="rsvp-modal-title" class="font-display italic text-3xl sm:text-4xl text-wedding-brown mb-3 opacity-0 translate-y-4 transition-all duration-500 delay-500">
+                Дякуємо!
+            </h3>
+
+            <!-- Divider -->
+            <div id="rsvp-modal-divider" class="w-16 h-px bg-wedding-brown-light mx-auto my-4 opacity-0 scale-x-0 transition-all duration-500 delay-700"></div>
+
+            <!-- Message -->
+            <p id="rsvp-modal-message" class="font-body text-lg text-wedding-brown-light mb-2 opacity-0 translate-y-4 transition-all duration-500 delay-[800ms]">
+                Вашу відповідь отримано
+            </p>
+            <p id="rsvp-modal-submessage" class="font-body text-base text-wedding-brown-light opacity-0 translate-y-4 transition-all duration-500 delay-[1000ms]">
+                Чекаємо на зустріч з Вами 18.04!
+            </p>
+
+            <!-- Decorative sparkles -->
+            <div id="rsvp-modal-sparkles" class="flex justify-center gap-2 mt-6 opacity-0 transition-opacity duration-500 delay-[1200ms]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-wedding-brown-light animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.09 6.26L20.18 9.27l-5.09 3.9L16.18 20 12 16.27 7.82 20l1.09-6.83L3.82 9.27l6.09-1.01z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-wedding-brown animate-pulse delay-150" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.09 6.26L20.18 9.27l-5.09 3.9L16.18 20 12 16.27 7.82 20l1.09-6.83L3.82 9.27l6.09-1.01z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-wedding-brown-light animate-pulse delay-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.09 6.26L20.18 9.27l-5.09 3.9L16.18 20 12 16.27 7.82 20l1.09-6.83L3.82 9.27l6.09-1.01z"/></svg>
+            </div>
+        </div>
+    </div>
 
     <!-- ============ FOOTER ============ -->
     <footer class="py-12 px-4 bg-wedding-brown text-wedding-creme text-center">
