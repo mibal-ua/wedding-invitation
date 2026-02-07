@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Left ring -->
+  <circle cx="24" cy="32" r="14" fill="none" stroke="#7B5B3A" stroke-width="3"/>
+  <!-- Right ring -->
+  <circle cx="40" cy="32" r="14" fill="none" stroke="#A07855" stroke-width="3"/>
+  <!-- Small heart on top -->
+  <path d="M32 18 C32 14, 27 12, 27 16 C27 19, 32 22, 32 22 C32 22, 37 19, 37 16 C37 12, 32 14, 32 18Z" fill="#D4A0A0"/>
+</svg>
