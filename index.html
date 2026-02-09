@@ -248,28 +248,59 @@
     </section>
 
     <!-- ============ DRESS CODE ============ -->
-    <section class="py-24 px-4 bg-wedding-creme-dark">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="font-display italic text-5xl sm:text-6xl text-wedding-brown" data-aos="fade-up">
+    <section class="py-24 px-4 relative overflow-hidden bg-wedding-brown">
+        <!-- Subtle decorative background pattern -->
+        <div class="absolute inset-0 opacity-[0.06]"
+             style="background-image: radial-gradient(circle, #FDF5E6 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="absolute top-0 left-0 w-72 h-72 bg-wedding-creme rounded-full opacity-[0.04] -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-wedding-creme rounded-full opacity-[0.04] translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <p class="font-display text-sm tracking-[0.3em] uppercase text-wedding-creme opacity-70" data-aos="fade-up">
+                Що одягнути
+            </p>
+            <h2 class="font-display italic text-5xl sm:text-6xl text-wedding-creme mt-4" data-aos="fade-up" data-aos-delay="100">
                 Дрес код
             </h2>
-            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
-            <p class="font-body text-lg text-wedding-brown-light mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-24 h-px bg-wedding-creme mx-auto my-8 opacity-30" data-aos="fade-up" data-aos-delay="150"></div>
+            <p class="font-body text-lg text-wedding-creme opacity-80 mt-4" data-aos="fade-up" data-aos-delay="200">
                 Semi-formal / Garden Elegant
             </p>
-            <p class="font-body text-base text-wedding-brown-light mt-4 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+            <p class="font-body text-base text-wedding-creme opacity-70 mt-4 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="300">
                 Ми будемо вдячні, якщо Ви оберете вбрання у теплих, природних тонах.
             </p>
 
-            <!-- Color swatches -->
-            <div class="flex flex-wrap justify-center gap-6 mt-12" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-16 h-16 rounded-full bg-[#FEFEFE] shadow-md ring-1 ring-[#D4C5B0]
-          -"></div>
-                <div class="w-16 h-16 rounded-full bg-[#F2D5D5] shadow-md ring-1 ring-black/5"></div>
-                <div class="w-16 h-16 rounded-full bg-[#D4A0A0] shadow-md ring-1 ring-black/5"></div>
-                <div class="w-16 h-16 rounded-full bg-[#A3B18A] shadow-md ring-1 ring-black/5"></div>
-                <div class="w-16 h-16 rounded-full bg-[#A07855] shadow-md ring-1 ring-black/5"></div>
-                <div class="w-16 h-16 rounded-full bg-[#4A3728] shadow-md ring-1 ring-black/5"></div>
+            <!-- Color palette card -->
+            <div class="mt-12 bg-white/[0.12] backdrop-blur-sm rounded-2xl p-8 sm:p-12 border border-white/[0.1]" data-aos="fade-up" data-aos-delay="400">
+                <p class="font-display text-sm tracking-[0.2em] uppercase text-wedding-creme opacity-60 mb-10">Кольорова палітра</p>
+
+                <!-- Color swatches with labels -->
+                <div class="flex justify-center gap-4 sm:gap-8">
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FFFFF0] shadow-lg ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110"></div>
+                        <span class="font-body text-xs sm:text-sm text-wedding-creme opacity-70 tracking-wide">Ivory</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#F2D5D5] shadow-lg ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110"></div>
+                        <span class="font-body text-xs sm:text-sm text-wedding-creme opacity-70 tracking-wide">Blush</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#D4A0A0] shadow-lg ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110"></div>
+                        <span class="font-body text-xs sm:text-sm text-wedding-creme opacity-70 tracking-wide">Rose</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#A3B18A] shadow-lg ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110"></div>
+                        <span class="font-body text-xs sm:text-sm text-wedding-creme opacity-70 tracking-wide">Sage</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#A07855] shadow-lg ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110"></div>
+                        <span class="font-body text-xs sm:text-sm text-wedding-creme opacity-70 tracking-wide">Camel</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#4A3728] shadow-lg ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110"></div>
+                        <span class="font-body text-xs sm:text-sm text-wedding-creme opacity-70 tracking-wide">Chocolate</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
