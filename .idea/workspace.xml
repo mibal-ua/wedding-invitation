@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7f3dd79-5946-4bf5-bf9a-42e2e65f361c" name="Changes" comment="Fix" />
+    <list default="true" id="d7f3dd79-5946-4bf5-bf9a-42e2e65f361c" name="Changes" comment="Add dist and node_modules" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +74,7 @@
       <updated>1763933854051</updated>
       <workItem from="1763933855202" duration="3313000" />
       <workItem from="1770660142028" duration="158000" />
-      <workItem from="1770660307014" duration="77000" />
+      <workItem from="1770660307014" duration="509000" />
     </task>
     <task id="LOCAL-00001" summary="Fix tailwind">
       <option name="closed" value="true" />
@@ -92,7 +92,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770660366369</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add dist and node_modules">
+      <option name="closed" value="true" />
+      <created>1770660397312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770660397312</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add dist and node_modules">
+      <option name="closed" value="true" />
+      <created>1770660558618</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1770660558618</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,7 +117,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix tailwind" />
     <MESSAGE value="Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+    <MESSAGE value="Add dist and node_modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add dist and node_modules" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
