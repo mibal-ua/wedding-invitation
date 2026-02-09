@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7f3dd79-5946-4bf5-bf9a-42e2e65f361c" name="Changes" comment="Fix tailwind">
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="d7f3dd79-5946-4bf5-bf9a-42e2e65f361c" name="Changes" comment="Fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +74,7 @@
       <updated>1763933854051</updated>
       <workItem from="1763933855202" duration="3313000" />
       <workItem from="1770660142028" duration="158000" />
-      <workItem from="1770660307014" duration="50000" />
+      <workItem from="1770660307014" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="Fix tailwind">
       <option name="closed" value="true" />
@@ -89,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763935043570</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix">
+      <option name="closed" value="true" />
+      <created>1770660366369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770660366369</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +100,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix tailwind" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix tailwind" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
